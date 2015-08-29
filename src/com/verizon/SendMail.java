@@ -81,37 +81,6 @@ public class SendMail
 	        return new PasswordAuthentication(username, password);
 	    }
 	}
-	
-	public static void sendSMS() {
-        try {
-                String host = "localhost";
-                int port = 9500;
-                String username = "admin";
-                String password = "abc123";
-
-                MyOzSmsClient osc = new MyOzSmsClient(host, port);
-                osc.login(username, password);
-
-                String line = "Hello World";
-
-                if(osc.isLoggedIn()) {
-                	System.out.println("SMS message:");
-                	osc.sendMessage("+919965477443", line);
-                    osc.logout();
-                }
-
-
-        } catch (IOException e) {
-                System.out.println(e.toString());
-                e.printStackTrace();
-                
-        } catch (InterruptedException e) {
-                System.out.println(e.toString());
-                e.printStackTrace();
-        }
-}
-
-	
 }
 
 
